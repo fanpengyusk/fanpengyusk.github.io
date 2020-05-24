@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>linux网卡命名 - 范鹏宇</title><meta description="linux网卡命名"><meta property="og:type" content="article"><meta property="og:title" content="linux网卡命名"><meta property="og:url" content="https://fanpengyusk.github.io/posts/f047182b/"><meta property="og:site_name" content="范鹏宇"><meta property="og:description" content="linux网卡命名"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/head.jpg"><meta property="article:published_time" content="2020-05-24T09:30:43.000Z"><meta property="article:modified_time" content="2020-05-24T10:29:10.981Z"><meta property="article:author" content="fanpengyusk"><meta property="article:tag" content="categories-comment"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/head.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://fanpengyusk.github.io/posts/f047182b/"},"headline":"linux网卡命名","image":["https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-05-24T09:30:43.000Z","dateModified":"2020-05-24T10:29:10.981Z","author":{"@type":"Person","name":"fanpengyu"},"description":"linux网卡命名"}</script><link rel="alternative" href="/atom.xml" title="范鹏宇" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/gnu_bash_logo.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/gnu_bash_logo.png" alt="范鹏宇" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/fanpengyusk"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-05-24T09:30:43.000Z">2020-05-24</time><a class="commentCountImg" href="/posts/f047182b/#comment-container"><span class="display-none-class">69981b3e31a8712e5d4c0ad61f4ff1d4</span><img class="not-gallery-item" src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/img/chat.svg"> <span class="commentCount" id="69981b3e31a8712e5d4c0ad61f4ff1d4"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/linux%E5%BA%94%E7%94%A8/">linux应用</a></span><span class="level-item">7 分钟 读完 (大约 985 个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">linux网卡命名</h1><div class="content"><blockquote>
+<p>linux网卡命名</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="Linux网卡命名规则"><a href="#Linux网卡命名规则" class="headerlink" title="Linux网卡命名规则"></a>Linux网卡命名规则</h1><p>传统的 Linux 下面看到的网卡名称都是从 eth0, eth1, eth2 …. 一直连续下去,一般我们使用的电脑只有 1 , 2 个网卡,所以在使用上不会遇到太大的难题,但是在多个网卡就头大了,到底哪一个ethx 是对应到哪一个实体网卡.</p>
+<p>还好现在有新的装置命名规则,目前看到有两种方式 Biosdevname &amp; net.ifnames</p>
+<h2 id="Biosdevname"><a href="#Biosdevname" class="headerlink" title="Biosdevname"></a>Biosdevname</h2><p>在讨论 Biosdevname 这种一致性的网络设备命名规则 device naming rule ,我们先来看看什么是 udev.<br>Linux 内核 2.6.15 之后的版本采用 sysfs 取代过去的 devfs ,我们就不需要像是传统的 Linux 把所有设备存放在 /dev/ 目录下(不管是不是会用到先通通产生),sysfs 多了一个 /sys/ 的目录存放动态设备节点 udev (sysfs), 优点是 /dev/ 不再需要预先产生很多不必要的设备.当有需要时系统再自行产生. udev 还提供了自己的规则来命名设备. 关于更多 udev 请自行参考 <a href="http://benjr.tw/10632">http://benjr.tw/10632</a></p>
+<p>但老实说这还是很麻烦, Dell 戴尔开发了一个 udev 的协助工具 <strong>Biosdevname</strong>,这是一个以 GNU General Public License（GPL）下所开发的工具,它提供了一个一致性的命名机制,实体网卡的名称会依据 BIOS 所建议的方式来命名,命名规则大致如下.</p>
+<ul>
+<li><p>Embedded network interface (LOM)<br>em[1234…] ⁠[New enumeration starts at 1]</p>
+</li>
+<li><p>PCI card network interface<br>p[slot]p[ethernet port] ⁠[For example: p3p4]</p>
+</li>
+<li><p>Virtual function<br>p[slot]p[ethernet port]_ ⁠[For example: p3p4_1]</p>
+</li>
+</ul>
+<p><strong>biosdevname</strong> 会依据系统的<a href="http://benjr.tw/214">SMBIOS</a>来为你的设备命名,不过系统的 BIOS 须为 SMBIOS 2.6 版本或是更高,当然如果你要使用此功能,必须使用 root 身份使用 yum 来安装 biosdevname 套件.</p>
+<ul>
+<li>RHEL (RedHat)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">＃yum install biosdevname</span><br></pre></td></tr></table></figure>
+
+<p>接着在 Kernel 加入参数 biosdevname=1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vi /boot/grub/grub.conf</span></span><br><span class="line">kernel /boot/vmlinuz biosdevname=1</span><br><span class="line">initrd /boot/initrd.img</span><br></pre></td></tr></table></figure>
+<p>如果系统使用的是 GRUB2 ,要修改的档案为 /etc/default/grub 内的 GRUB_CMDLINE_LINUX .请参考 <a href="http://benjr.tw/95009">GRUB2</a></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># cat /etc/default/grub</span></span><br><span class="line">GRUB_TIMEOUT=5</span><br><span class="line">GRUB_DISTRIBUTOR=<span class="string">"<span class="variable">$(sed 's, release .*$,,g' /etc/system-release)</span>"</span></span><br><span class="line">GRUB_DEFAULT=saved</span><br><span class="line">GRUB_DISABLE_SUBMENU=<span class="literal">true</span></span><br><span class="line">GRUB_TERMINAL_OUTPUT=<span class="string">"console"</span></span><br><span class="line">GRUB_CMDLINE_LINUX=<span class="string">"crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet net.ifnames=0 biosdevname=0"</span></span><br><span class="line">GRUB_DISABLE_RECOVERY=<span class="string">"true"</span></span><br><span class="line">[root@localhost ~]<span class="comment"># grub2-mkconfig</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Ubuntu</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">＃yum install biosdevname</span><br></pre></td></tr></table></figure>
+
+<p>一样在 append 加入参数 biosdevname=1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vi /boot/grub/grub.conf</span></span><br><span class="line">kernel /boot/vmlinuz</span><br><span class="line">append initrd=/boot/initrd.img biosdevname=1</span><br></pre></td></tr></table></figure>
+
+<p>如果要取消将 biosdevname=0 即可.</p>
+<p>或者是手动更改 /etc/udev/rules.d/70-persistent-net.rules 改变其命名规则.下面示范列参考</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vi /etc/udev/rules.d/70-persistent-net.rules</span></span><br><span class="line"><span class="comment"># PCI device 0x14e4:0x1680 (tg3)</span></span><br><span class="line">ACTION==<span class="string">"add"</span>, SUBSYSTEM==<span class="string">"net"</span>, DRIVER==<span class="string">"tg3"</span>, ATTR&#123;address&#125;==<span class="string">"00:1A:64:22:04:83"</span>, NAME=<span class="string">"em1"</span></span><br></pre></td></tr></table></figure>
+
+<p>只要修改 NAME 的部分,如果系统没有 /etc/udev/rules.d/70-persistent-net.rules 请自行创建.<br>这一篇就讨论到如何自行修改网路设备的命名规则. <a href="http://benjr.tw/10626">http://benjr.tw/10626</a></p>
+<h2 id="net-ifnames"><a href="#net-ifnames" class="headerlink" title="net.ifnames"></a>net.ifnames</h2><p>要查 net.ifnames 请用这个关键字 Predictable Network Interface Names,这个是预设的功能,除非你在开机的时候加入内核参数 net.ifnames=0 ,前面介绍的 biosdevname 也就没有再用了,先来看看 Predictable Network Interface 的命名规则长怎样!!</p>
+<p>装置名称由 <strong>装置类型 + 装置位置+数字</strong> 组成：</p>
+<h5 id="装置类型"><a href="#装置类型" class="headerlink" title="装置类型"></a>装置类型</h5><ol>
+<li>en for Ethernet,</li>
+<li>wl for wireless LAN (WLAN),</li>
+<li>ww for wireless wide area network (WWAN).</li>
+</ol>
+<h5 id="装置位置-数字"><a href="#装置位置-数字" class="headerlink" title="装置位置+数字"></a>装置位置+数字</h5><ul>
+<li>o on-board device index number</li>
+<li>s[f][d] hotplug slot index number</li>
+<li>x MAC address</li>
+<li>ps[f][d] PCI geographical location</li>
+<li>ps[f][u][..][i] USB port number chain</li>
+</ul>
+<p>enp0s3 就代表 Ethernet ,PCI bus 0,slot 3</p>
+<h2 id="Biosdevname-amp-net-ifnames"><a href="#Biosdevname-amp-net-ifnames" class="headerlink" title="Biosdevname &amp; net.ifnames"></a>Biosdevname &amp; net.ifnames</h2><p>问题来了,如果 Biosdevname &amp; net.ifnames 都用了,那名称会变成怎麽样!!!</p>
+<ol>
+<li>No parameters (net.ifnames 为预设): NIC identified as “enp5s2”.</li>
+<li>Parameter biosdevname=0 (net.ifnames 为预设): NIC identified as “enp5s2”.</li>
+<li>Parameter net.ifnames=0 (采用 biosdevname 规则): NIC identified as “em1”.</li>
+<li>Parameter net.ifnames=0 AND biosdevname=0 (最传统的方式,eth0 eth1 傻傻分不清): NIC identified as “eth0”.</li>
+</ol>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="http://benjr.tw/93340">Linux – Biosdevname &amp; net.ifnames</a></p>
+</div><div class="article-tags size-small is-uppercase mb-4"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted mr-2" rel="tag" href="/tags/linux%E5%BA%94%E7%94%A8/">linux应用</a><p class="text-right font1_1"><time datetime="2020-05-24T10:29:10.981Z"><strong><em> 本文最后修改于: 2020-05-24.</em></strong></time></p></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://fanpengyusk.github.io/posts/f047182b/">linux网卡命名</a></li><li><strong>本文作者：</strong><a href="https://fanpengyusk.github.io">fanpengyusk</a></li><li><strong>本文链接：</strong><a href="https://fanpengyusk.github.io/posts/f047182b/">https://fanpengyusk.github.io/posts/f047182b/</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/posts/1a54ada2/" target="_blank">git推送到vps</a><br></span><span>  2.<a class="is-size-6" href="/posts/47c45f64/" target="_blank">http服务器搭建</a><br></span><span>  3.<a class="is-size-6" href="/posts/f047182b/" target="_blank">linux网卡命名</a><br></span><span>  4.<a class="is-size-6" href="/posts/4e8a0e45/" target="_blank">docker使用</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/alipay.JPG" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/wechat.JPG" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/posts/47c45f64/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">http服务器搭建</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/posts/1a54ada2/"><span class="level-item">git推送到vps</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.0/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: '69981b3e31a8712e5d4c0ad61f4ff1d4',
+            repo: 'hexo_comment',
+            owner: 'fanpengyusk',
+            clientID: '26f63710d055564010a4',
+            clientSecret: 'e880dcee42dc053b99c79ed2e3f0c4d26f03a893',
+            admin: ["fanpengyusk"],
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" id="toc-item-Linux网卡命名规则" href="#Linux网卡命名规则"><span>Linux网卡命名规则</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Biosdevname" href="#Biosdevname"><span>Biosdevname</span></a></li><li><a class="is-flex" id="toc-item-net-ifnames" href="#net-ifnames"><span>net.ifnames</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-装置位置-数字" href="#装置位置-数字"><span>装置位置+数字</span></a></li></ul></li><li><a class="is-flex" id="toc-item-Biosdevname-amp-net-ifnames" href="#Biosdevname-amp-net-ifnames"><span>Biosdevname &amp;amp; net.ifnames</span></a></li><li><a class="is-flex" id="toc-item-参考：" href="#参考："><span>参考：</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/head.jpg" alt="范鹏宇"></figure><p class="title is-size-4 is-block line-height-inherit">范鹏宇</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>北京</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">4</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/fanpengyusk" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/fanpengyusk"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:570448495@qq.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><!--!--><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-05-24T09:56:43.000Z">2020-05-24</time></p><p class="title is-6"><a class="link-muted" href="/posts/4e8a0e45/">docker使用</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-05-24T09:30:43.000Z">2020-05-24</time></p><p class="title is-6"><a class="link-muted" href="/posts/47c45f64/">http服务器搭建</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/linux%E5%BA%94%E7%94%A8/">linux应用</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-05-24T09:30:43.000Z">2020-05-24</time></p><p class="title is-6"><a class="link-muted" href="/posts/f047182b/">linux网卡命名</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/linux%E5%BA%94%E7%94%A8/">linux应用</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-05-24T08:10:00.000Z">2020-05-24</time></p><p class="title is-6"><a class="link-muted" href="/posts/1a54ada2/">git推送到vps</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/git/">git</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/linux%E5%BA%94%E7%94%A8/"><span class="level-start"><span class="level-item">linux应用</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/private/"><span class="level-start"><span class="level-item">private</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%85%B6%E4%BB%96/"><span class="level-start"><span class="level-item">其他</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/05/"><span class="level-start"><span class="level-item">五月 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/01/"><span class="level-start"><span class="level-item">一月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/linux%E5%BA%94%E7%94%A8/"><span class="tag">linux应用</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/linux%E5%BA%94%E7%94%A8-%E5%85%B6%E4%BB%96/"><span class="tag">linux应用 - 其他</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8A%A0%E5%AF%86%E6%96%87%E7%AB%A0/"><span class="tag">加密文章</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=removeifFeedsId&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="removeifFeedsId" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/gnu_bash_logo.png" alt="范鹏宇" height="28"></a><p class="size-small"><span>&copy; 2020 fanpengyusk</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">amazing</a>,Modify by <a href="https://github.com/fanpengyusk" target="_blank">范鹏宇</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="/message" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/statistics.js"></script><span id="statistic-times">网站运行时间统计加载中...</span><br><div class="size-small"><span id="busuanzi_container_site_uv">感谢<strong> <span id="busuanzi_value_site_uv">99+</span> </strong></span>小伙伴的<strong> <span id="busuanzi_value_site_pv">99+</span> </strong>次光临&quot;</div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/fanpengyusk"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://fanpengyusk.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/main.js" defer></script><script src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: 'https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v2.2.1/js/insight.js" defer></script></body></html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fanpengyusk.github.io/"/>
-  <updated>2020-07-17T12:50:24.394Z</updated>
+  <updated>2020-07-20T11:24:18.165Z</updated>
   <id>https://fanpengyusk.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>红黑树自平衡原理</title>
+    <link href="https://fanpengyusk.github.io/posts/35f5187e/"/>
+    <id>https://fanpengyusk.github.io/posts/35f5187e/</id>
+    <published>2020-07-20T12:49:43.000Z</published>
+    <updated>2020-07-20T11:24:18.165Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>红黑树自平衡原理</p></blockquote><a id="more"></a><h2 id="红黑树自平衡的原理"><a href="#红黑树自平衡的原理" class="headerlink" title="红黑树自平衡的原理"></a>红黑树自平衡的原理</h2><p><strong>红黑树</strong>（英语：Red–black tree）是一种<a href="https://zh.wikipedia.org/wiki/自平衡二叉查找树">自平衡二叉查找树</a>，是在<a href="https://zh.wikipedia.org/wiki/计算机科学">计算机科学</a>中用到的一种<a href="https://zh.wikipedia.org/wiki/数据结构">数据结构</a>，典型的用途是实现<a href="https://zh.wikipedia.org/wiki/关联数组">关联数组</a>。它在1972年由<a href="https://zh.wikipedia.org/wiki/鲁道夫·贝尔">鲁道夫·贝尔</a>发明，被称为”<strong>对称二叉B树</strong>“，它现代的名字源于Leo J. Guibas和<a href="https://zh.wikipedia.org/wiki/Robert_Sedgewick">Robert Sedgewick</a>于<a href="https://zh.wikipedia.org/wiki/1978年">1978年</a>写的一篇论文。红黑树的结构复杂，但它的操作有着良好的最坏情况<a href="https://zh.wikipedia.org/wiki/算法分析">运行时间</a>，并且在实践中高效：它可以在O{logn}时间内完成查找、插入和删除</p><p>红黑树是<a href="https://zh.wikipedia.org/wiki/2-3-4树">2-3-4树</a>的一种等同。换句话说，对于每个2-3-4树，都存在至少一个数据元素是同样次序的红黑树。在2-3-4树上的插入和删除操作也等同于在红黑树中颜色翻转和旋转。这使得2-3-4树成为理解红黑树背后的逻辑的重要工具，这也是很多介绍算法的教科书在红黑树之前介绍2-3-4树的原因，尽管2-3-4树在实践中不经常使用。红黑树相对于AVL树来说，牺牲了部分平衡性以换取插入/删除操作时少量的旋转操作，整体来说性能要优于AVL树。</p><p>红黑树是每个节点都带有<em>颜色</em>属性的<a href="https://zh.wikipedia.org/wiki/二元搜尋樹">二叉查找树</a>，颜色为<em>红色</em>或<em>黑色</em>。在二叉查找树强制一般要求以外，对于任何有效的红黑树我们增加了如下的额外要求：</p><ol><li><p>节点是红色或黑色。</p></li><li><p>根是黑色。</p></li><li><p>所有叶子都是黑色（叶子是NIL黑色节点）。</p></li><li><p>每个红色节点必须有两个黑色的子节点。（从每个叶子到根的所有路径上不能有两个连续的红色节点。）</p></li><li><p>从任一节点到其每个叶子的所有路径]都包含相同数目的黑色节点。（黑色完美平衡）</p></li></ol><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/450px-Red-black_tree_example.svg.png" alt="红黑树"></p><h3 id="红黑树自平衡的最小单元"><a href="#红黑树自平衡的最小单元" class="headerlink" title="红黑树自平衡的最小单元"></a>红黑树自平衡的最小单元</h3><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/%E6%9C%80%E5%B0%8F%E5%8D%95%E5%85%83_20200626165547.jpg" alt="最小单元_20200626165547"></p><h3 id="红黑树自平衡的原子操作"><a href="#红黑树自平衡的原子操作" class="headerlink" title="红黑树自平衡的原子操作"></a>红黑树自平衡的原子操作</h3><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C.jpg" alt="原子操作"></p><h3 id="变色"><a href="#变色" class="headerlink" title="变色"></a>变色</h3><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/%E5%8F%98%E8%89%B2_20200626170352.jpg" alt="变色_20200626170352"></p><h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/%E5%B7%A6%E6%97%8B_20200626170405.jpg" alt="左旋_20200626170405"></p><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/%E5%8F%B3%E6%97%8B_20200626170414.jpg" alt="右旋_20200626170414"></p><h3 id="红黑树的新增"><a href="#红黑树的新增" class="headerlink" title="红黑树的新增"></a>红黑树的新增</h3><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/%E7%BA%A2%E9%BB%91%E6%A0%91%E6%96%B0%E5%A2%9E%E5%9B%9B%E7%A7%8D%E6%83%85%E5%86%B5.png" alt="红黑树新增四种情况"></p><h4 id="case3：父节点与叔叔节点为红色"><a href="#case3：父节点与叔叔节点为红色" class="headerlink" title="case3：父节点与叔叔节点为红色"></a>case3：父节点与叔叔节点为红色</h4><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/case3.png" alt="case3"></p><h4 id="case4-1-三点一线"><a href="#case4-1-三点一线" class="headerlink" title="case4.1 三点一线"></a>case4.1 三点一线</h4><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/case4.1.png" alt="case4.1"></p><h4 id="case4-2-三角关系"><a href="#case4-2-三角关系" class="headerlink" title="case4.2 三角关系"></a>case4.2 三角关系</h4><p><img src="https://cdn.jsdelivr.net/gh/fanpengyusk/blog_image/img/hexo/case4.2.png" alt="case4.2"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;红黑树自平衡原理&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="linux内核" scheme="https://fanpengyusk.github.io/categories/linux%E5%86%85%E6%A0%B8/"/>
+    
+    
+      <category term="linux内核" scheme="https://fanpengyusk.github.io/tags/linux%E5%86%85%E6%A0%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>知识总结</title>
+    <link href="https://fanpengyusk.github.io/posts/2211132a/"/>
+    <id>https://fanpengyusk.github.io/posts/2211132a/</id>
+    <published>2020-07-20T09:56:43.000Z</published>
+    <updated>2020-07-20T11:18:14.061Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>知识总结，持续更新中</p></blockquote><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;知识总结，持续更新中&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="https://fanpengyusk.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="https://fanpengyusk.github.io/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
   
   <entry>
     <title>块设备</title>
@@ -96,7 +146,7 @@
     <link href="https://fanpengyusk.github.io/posts/6f57350/"/>
     <id>https://fanpengyusk.github.io/posts/6f57350/</id>
     <published>2020-05-24T09:56:43.000Z</published>
-    <updated>2020-07-17T12:57:46.031Z</updated>
+    <updated>2020-07-17T12:59:53.027Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>hexo创建博客</p></blockquote><a id="more"></a><ul><li>hexo是使用node.js写成的</li></ul><ol><li>先安装npm，根据不同的系统安装方法也不同，可以到官网下载安装，linux可以直接使用apt或yum install nodejs 与npm</li><li>由于国内访问国外的网站速度较慢，可以切换到国内的淘宝源，安装cnpm，npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a></li><li>cnpm install -g hexo-cli（linux用户可能需要自己创建符号链接）</li><li>mkdir blog，blog文件夹就是存放博客的文件夹，名字可以随便起</li><li>cd blog，hexo init</li><li>hexo server，可以直接简写hexo s 启动server</li></ol><ul><li>创建自己的博客：</li></ul><ol><li>cd source/_posts/下，hexo new “文章名字”</li><li>使用markdown编辑工具，编写博客</li><li>退回blog文件夹，hexo generate (hexo g)</li></ol><ul><li>在github中部署自己的hexo博客</li></ul><ol><li>在自己的github中创建仓库，名字必须是github名字.github.io(fanpengyusk.github.io)</li><li>使用npm安装插件，cnpm install –save hexo-deployer-git(mocos) cnpm install  hexo-deployer-git –save (linux)</li><li>在blog文件夹中修改_config.yml文件在最底端添加字段</li></ol><ul><li><p>deploy:<br>type: ‘git’<br>repo: <a href="https://github.com/fanpengyusk/fanpengyusk.github.io">https://github.com/fanpengyusk/fanpengyusk.github.io</a><br>master: master</p></li><li><p>安装主题</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clome https://github.com/litten/hexo-theme-yilia themes/yilia</span><br></pre></td></tr></table></figure><p>修改_config.yml配置文件，将主题修改为yilia</p></li><li><p>无密码上传代码</p></li></ul><ol><li>可以使用ssh-keygen -t rsa -C “你的git登录邮箱”，创建rsa的公钥和私钥，将公钥上传到github上，这样就不需要每次都输入用户名和密码了</li></ol>]]></content>
     
@@ -112,7 +162,7 @@
       <category term="其他" scheme="https://fanpengyusk.github.io/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-      <category term="linux应用 - 其他" scheme="https://fanpengyusk.github.io/tags/linux%E5%BA%94%E7%94%A8-%E5%85%B6%E4%BB%96/"/>
+      <category term="其他" scheme="https://fanpengyusk.github.io/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
